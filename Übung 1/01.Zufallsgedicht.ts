@@ -58,5 +58,3 @@ namespace Zufallsgedicht  {
         console.log(vers);
     }
     }
-    
-    
