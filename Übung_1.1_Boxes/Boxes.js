@@ -42,4 +42,4 @@ namespace Boxes {
 
 // Namespace ausführen
 Boxes;
-console.log(`i: ${i}, x: ${x}, y: ${y}, color: ${color}`);
+
