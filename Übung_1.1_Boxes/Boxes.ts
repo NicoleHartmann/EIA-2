@@ -20,20 +20,23 @@ var Boxes;
                 color = "#00ff00"; // i == 1 & i == 4 = Grün
                 break;
             case 3:
-                continue; // i == 3 wird  übersprungen
+                continue; // i == 3 wird übersprungen
             default:
                 color = "#0000ff"; // Blau für alle anderen
         }
-        // Debugging: Prüfen der X- und Y-Koordinaten und der Farbe
+
+        // Debugger soll X und Y Koordinaten und die Farbe Prüfen
+
         console.log(`Box ${i}: x = ${x}, y = ${y}, color = ${color}`);
         
 
         for (let size of ["big", "medium", "small"]) {
             createBox(color, x, y, size);
             if (i == 4)
-                break; // Falls i == 4, nach der ersten Box die Schleife beenden
+                break; // Falls i == 4 soll nach der ersten Box die Schleife beendet werden 
         }
     }
+
     // Funktion zur Erstellung einer Box:
 
     function createBox(_color, _x, _y, _size) {
@@ -45,7 +48,7 @@ var Boxes;
         div.style.left = _x + "px"; 
         div.style.top = _y + "px"; 
         
-        // Debugging: Ausgabe der Box-Details
+        // Debugger soll die Ausgabe der Box-Details Prüfen
         console.log(`Box mit Farbe ${_color}, Größe ${_size}, Position (${_x}, ${_y}) erstellt.`);
     }
 })(Boxes || (Boxes = {}));
