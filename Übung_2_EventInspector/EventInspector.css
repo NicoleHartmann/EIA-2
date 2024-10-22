@@ -1,0 +1,63 @@
+body {
+    background-color: rgba(106, 188, 251, 0.547);
+}
+
+h1 {
+    margin: 0;
+    text-align: center; 
+}
+
+#div0 {
+    width: 45%;             
+    height: 600px;           /* Höhe erhöhen, um Platz für den Button zu schaffen */
+    padding: 0;              /* Padding auf 0 setzen, um Platz zu sparen */
+    border: 1px solid #000;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-left: 50px;  
+    margin-top: 50px;
+    position: relative;      /* Positionierung des Containers relativ für absolute Positionierung des Buttons */
+}
+
+#div1 {
+    width: 45%;             
+    height: 600px;          /* Höhe anpassen, wenn nötig */
+    
+    border: 1px solid #000;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin-left: 750px;  
+    margin-top: -599px; /* Margin für Abstand zwischen div0 und div1 */
+}
+
+button {
+    width: 300px;          /* Breite auf 100px setzen */
+    height: 150px;         /* Höhe auf 100px setzen */
+    border: none;          /* Optional: Entfernt den Standardrahmen */
+    background-color: #007BFF; /* Beispiel für Hintergrundfarbe */
+    color: white;          /* Textfarbe */
+    font-size: 20px;       /* Schriftgröße anpassen, falls gewünscht */
+    cursor: pointer;       /* Zeiger-Cursor beim Überfahren */
+    border-radius: 0;      /* Ecken eckig halten (standardmäßig 0) */
+    position: absolute;     /* Position des Buttons absolut innerhalb des Containers */
+    top: 78%;                 /* An der oberen Kante des Containers ausrichten */
+    left: 60%;                /* An der linken Kante des Containers ausrichten */
+}
+
+#infoBox {
+    position: fixed; /* Fixe Position */
+    background: rgba(255, 255, 255, 0.8); /* Hintergrundfarbe */
+    border: 1px solid #000; /* Rahmen */
+    padding: 5px; /* Innenabstand */
+    display: none; /* Standardmäßig verstecken */
+    pointer-events: none; /* Verhindert, dass das Element Mausereignisse abfängt */
+}
+#CustomEventButton{
+    background-color: #000;
+}
