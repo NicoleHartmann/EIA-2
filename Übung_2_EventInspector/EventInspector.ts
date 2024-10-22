@@ -5,6 +5,9 @@ Matrikel: < 277174 >
 Datum: < 12.10.2024 >
 */
 
+
+
+// Infos in der konsole über ein Event das ausgeführt wird:
 function logEventInfo(_event: Event) {
     console.log("Event Type:", _event.type);
     console.log("Event Target:", _event.target);
@@ -12,6 +15,7 @@ function logEventInfo(_event: Event) {
     console.log("Full Event Object:", _event);
 }
 
+// setInfoBox soll die aktuelle Mausposition anzeigt:
 function setInfoBox(_event: MouseEvent) {
     const infoBox = document.getElementById("infoBox");
     if (infoBox) {
@@ -19,6 +23,7 @@ function setInfoBox(_event: MouseEvent) {
         const mouseY = _event.clientY;
         const offset = 10;
 
+       // Text  soll in der Info-Box auf die Mausposition anzeigen:
         infoBox.textContent = `Mouse Position: (${mouseX}, ${mouseY})`;
         infoBox.style.left = `${mouseX + offset}px`;
         infoBox.style.top = `${mouseY + offset}px`;
@@ -29,11 +34,7 @@ function setInfoBox(_event: MouseEvent) {
 function handleLoad() {
     
     document.addEventListener("mousemove", setInfoBox);
-
-    
     document.addEventListener("click", logEventInfo);
-
-    
     document.addEventListener("keyup", function (_event) {
         console.log("Key Up Event:", _event.key);
     });
@@ -56,7 +57,7 @@ function handleLoad() {
             console.log("Button clicked - Custom Event being triggered");
             const customEvent = new CustomEvent("myCustomEvent", {
                 detail: { message: "Custom event has been triggered!" },
-                bubbles: true // Event soll den DOM-Graphen "aufsteigen"
+                bubbles: true // Event soll den DOM-Graphen aufsteigen
             });
             customEventButton.dispatchEvent(customEvent);
         });
