@@ -9,8 +9,8 @@ h1 {
 
 #div0 {
     width: 45%;             
-    height: 600px;           /* Höhe erhöhen, um Platz für den Button zu schaffen */
-    padding: 0;              /* Padding auf 0 setzen, um Platz zu sparen */
+    height: 600px;           
+    padding: 0;              
     border: 1px solid #000;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -19,12 +19,12 @@ h1 {
     box-sizing: border-box;
     margin-left: 50px;  
     margin-top: 50px;
-    position: relative;      /* Positionierung des Containers relativ für absolute Positionierung des Buttons */
+    position: relative;      
 }
 
 #div1 {
     width: 45%;             
-    height: 600px;          /* Höhe anpassen, wenn nötig */
+    height: 600px;       
     
     border: 1px solid #000;
     background-color: white;
@@ -33,28 +33,28 @@ h1 {
     justify-content: center;
     box-sizing: border-box;
     margin-left: 750px;  
-    margin-top: -599px; /* Margin für Abstand zwischen div0 und div1 */
+    margin-top: -599px; 
 }
 
 button {
-    width: 150px;          /* Breite auf 100px setzen */
-    height: 80px;         /* Höhe auf 100px setzen */
-    border: none;          /* Optional: Entfernt den Standardrahmen */
-    background-color: #a0c6ee; /* Beispiel für Hintergrundfarbe */
-    color: white;          /* Textfarbe */
-    font-size: 20px;       /* Schriftgröße anpassen, falls gewünscht */
-    cursor: pointer;       /* Zeiger-Cursor beim Überfahren */
-    border-radius: 20px;      /* Ecken eckig halten (standardmäßig 0) */
-    position: absolute;     /* Position des Buttons absolut innerhalb des Containers */
-    top: 60%;                 /* An der oberen Kante des Containers ausrichten */
-    left: 20;                /* An der linken Kante des Containers ausrichten */
+    width: 150px;         
+    height: 80px;         
+    border: none;          
+    background-color: #a0c6ee; 
+    color: white;          
+    font-size: 20px;       
+    cursor: pointer;       
+    border-radius: 20px;      
+    position: absolute;     
+    top: 60%;                 
+    left: 20;                
 }
 
 #infoBox {
-    position: fixed; /* Fixe Position */
-    background: rgba(255, 255, 255, 0.8); /* Hintergrundfarbe */
-    border: 1px solid #000; /* Rahmen */
-    padding: 5px; /* Innenabstand */
-    display: none; /* Standardmäßig verstecken */
-    pointer-events: none; /* Verhindert, dass das Element Mausereignisse abfängt */
+    position: fixed; 
+    background: rgba(255, 255, 255, 0.8); 
+    border: 1px solid #000; 
+    padding: 5px; 
+    display: none; 
+    pointer-events: none; 
 }
