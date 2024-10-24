@@ -37,17 +37,17 @@ h1 {
 }
 
 button {
-    width: 300px;          /* Breite auf 100px setzen */
-    height: 150px;         /* Höhe auf 100px setzen */
+    width: 150px;          /* Breite auf 100px setzen */
+    height: 80px;         /* Höhe auf 100px setzen */
     border: none;          /* Optional: Entfernt den Standardrahmen */
-    background-color: #007BFF; /* Beispiel für Hintergrundfarbe */
+    background-color: #a0c6ee; /* Beispiel für Hintergrundfarbe */
     color: white;          /* Textfarbe */
     font-size: 20px;       /* Schriftgröße anpassen, falls gewünscht */
     cursor: pointer;       /* Zeiger-Cursor beim Überfahren */
-    border-radius: 0;      /* Ecken eckig halten (standardmäßig 0) */
+    border-radius: 20px;      /* Ecken eckig halten (standardmäßig 0) */
     position: absolute;     /* Position des Buttons absolut innerhalb des Containers */
-    top: 78%;                 /* An der oberen Kante des Containers ausrichten */
-    left: 60%;                /* An der linken Kante des Containers ausrichten */
+    top: 60%;                 /* An der oberen Kante des Containers ausrichten */
+    left: 20;                /* An der linken Kante des Containers ausrichten */
 }
 
 #infoBox {
@@ -57,7 +57,4 @@ button {
     padding: 5px; /* Innenabstand */
     display: none; /* Standardmäßig verstecken */
     pointer-events: none; /* Verhindert, dass das Element Mausereignisse abfängt */
-}
-#CustomEventButton{
-    background-color: #000;
 }
