@@ -1,4 +1,4 @@
-
+"use strict";
 /*
 Aufgabe: < 2. EventInspector >
 Name: < Nicole Hartmann >
@@ -60,4 +60,4 @@ function handleLoad() {
     CustomEventHandlers();
 }
 window.addEventListener("load", handleLoad);
-//# sourceMappingURL=EventInspector.js.map
+//# sourceMappingURL=02.EventInspector.js.map
