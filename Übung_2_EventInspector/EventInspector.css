@@ -1,5 +1,5 @@
 body {
-    background-color: rgba(106, 188, 251, 0.547);
+    background-color: rgba(230, 197, 14, 0.547);
 }
 
 h1 {
@@ -9,7 +9,8 @@ h1 {
 
 #div0 {
     width: 45%;             
-    height: 600px;                       
+    height: 600px;  
+    position: relative;                       
     border: 1px solid #000;
     background-color: rgb(255, 255, 255);
     display: flex;
@@ -18,7 +19,7 @@ h1 {
     box-sizing: border-box;
     margin-left: 50px;  
     margin-top: 50px;
-    position: relative;      
+         
 }
 
 #div1 {
