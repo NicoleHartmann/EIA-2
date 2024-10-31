@@ -1,3 +1,4 @@
+"use strict";
 /*
 Aufgabe: < 2. EventInspector >
 Name: < Nicole Hartmann >

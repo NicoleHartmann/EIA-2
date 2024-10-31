@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Aufgabenliste.css">
+    <script defer src="Aufgabenliste.js"></script>
+    <title>Übung 3_Aufgabenliste</title>
+</head>
+<body>
+    <div class="container">
+        <h1> 🎉 Aufgabenliste 🎉</h1>
+
+        <div class="search-filter">
+            <input type="text" id="search" placeholder="Suche...">
+            <select id="filter">
+                <option value="all">Alle</option>
+                <option value="completed">Erledigt</option>
+                <option value="overdue">Überfällig</option>
+            </select>
+        </div>
+
+        <div class="task-cards"></div>
+
+        <h2>Neue Aufgabe hinzufügen</h2>
+        <form id="taskForm">
+            <input type="text" id="taskTitle" placeholder="Titel" required>
+            <input type="time" id="taskDueTime" required>
+            <input type="text" id="taskAssignee" placeholder="Bearbeiter" required>
+            <textarea id="taskComment" placeholder="Kommentar"></textarea>
+            <button type="submit">Aufgabe speichern</button>
+        </form>
+    </div>
+</body>
+</html>
