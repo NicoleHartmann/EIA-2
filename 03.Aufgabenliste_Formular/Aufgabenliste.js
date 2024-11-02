@@ -111,7 +111,6 @@ function loadTasks() {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
 }
-// Suche und den Filter
 searchInput.addEventListener("input", renderTasks);
 filterSelect.addEventListener("change", renderTasks);
 renderTasks();

@@ -141,7 +141,7 @@ function loadTasks(): Task[] {
     return savedTasks ? JSON.parse(savedTasks) : [];
 }
 
-// Suche und den Filter
+
 searchInput.addEventListener("input", renderTasks);
 filterSelect.addEventListener("change", renderTasks);
 
