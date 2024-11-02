@@ -15,7 +15,7 @@ const taskForm = document.getElementById("taskForm") as HTMLFormElement;
 const searchInput = document.getElementById("search") as HTMLInputElement;
 const filterSelect = document.getElementById("filter") as HTMLSelectElement;
 
-// Aktualisierung der Aufgabenanzeige:
+// Aktualisierung der Aufgabenanzeige von (Such und Filterleiste):
 function renderTasks() {
     taskList.innerHTML = "";
     const searchTerm = searchInput.value.toLowerCase();
@@ -60,11 +60,22 @@ function renderTasks() {
     }
 }
 
-// Überprüfung, ob eine Aufgabe überfällig ist
-function checkOverdueStatus(task: Task): Task {
-    const currentDateTime = new Date();
-    const taskDueDateTime = new Date(`1970-01-01T${task.dueTime}`);
+// Überprüfung ob die Aufgabe überfällig ist:
 
+function checkOverdueStatus(task: Task): Task {
+    const currentDateTime = new Date();  
+    const [hours, minutes] = task.dueTime.split(":").map(Number);
+
+    
+    const taskDueDateTime = new Date(
+        currentDateTime.getFullYear(),
+        currentDateTime.getMonth(),
+        currentDateTime.getDate(),
+        hours,
+        minutes
+    );
+
+    
     if (task.status === "in-progress" && taskDueDateTime < currentDateTime) {
         task.status = "overdue";
         saveTasks();
@@ -72,7 +83,7 @@ function checkOverdueStatus(task: Task): Task {
     return task;
 }
 
-// Markierung einer Aufgabe als erledigt
+// Markierung einer Aufgabe als erledigt:
 function markTaskAsCompleted(taskId: number) {
     const task = tasks.find((t) => t.id === taskId);
     if (task) {
@@ -82,7 +93,7 @@ function markTaskAsCompleted(taskId: number) {
     }
 }
 
-// Löschen einer Aufgabe
+// Löschen einer Aufgabe:
 function deleteTask(taskId: number) {
     const confirmation = confirm("Willst du diese Aufgabe wirklich löschen?");
     if (confirmation) {
@@ -106,7 +117,7 @@ function getStatusLabel(status: string): string {
     }
 }
 
-// Hinzufügen einer neuen Aufgabe
+// Hinzufügen einer neuen Aufgabe:
 taskForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -130,19 +141,19 @@ taskForm.addEventListener("submit", (event) => {
     renderTasks();
 });
 
-// Speicherung der Aufgaben im localStorage
+// Speicherung der Aufgaben im localStorage:
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
-// Laden der Aufgaben aus dem localStorage
+// Laden der Aufgaben aus dem localStorage:
 function loadTasks(): Task[] {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
 }
 
 
-searchInput.addEventListener("input", renderTasks);
+searchInput.addEventListener("input", renderTasks); //Aktualisieren die Aufgabenliste dynamisch 
 filterSelect.addEventListener("change", renderTasks);
 
 

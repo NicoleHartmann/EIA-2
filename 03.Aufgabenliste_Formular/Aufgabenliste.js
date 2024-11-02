@@ -5,7 +5,7 @@ const taskList = document.querySelector(".task-cards");
 const taskForm = document.getElementById("taskForm");
 const searchInput = document.getElementById("search");
 const filterSelect = document.getElementById("filter");
-// Aktualisierung der Aufgabenanzeige:
+// Aktualisierung der Aufgabenanzeige von (Such und Filterleiste):
 function renderTasks() {
     taskList.innerHTML = "";
     const searchTerm = searchInput.value.toLowerCase();
@@ -42,17 +42,18 @@ function renderTasks() {
         taskList.appendChild(taskCard);
     }
 }
-// Überprüfung, ob eine Aufgabe überfällig ist
+// Überprüfung ob die Aufgabe überfällig ist:
 function checkOverdueStatus(task) {
     const currentDateTime = new Date();
-    const taskDueDateTime = new Date(`1970-01-01T${task.dueTime}`);
+    const [hours, minutes] = task.dueTime.split(":").map(Number);
+    const taskDueDateTime = new Date(currentDateTime.getFullYear(), currentDateTime.getMonth(), currentDateTime.getDate(), hours, minutes);
     if (task.status === "in-progress" && taskDueDateTime < currentDateTime) {
         task.status = "overdue";
         saveTasks();
     }
     return task;
 }
-// Markierung einer Aufgabe als erledigt
+// Markierung einer Aufgabe als erledigt:
 function markTaskAsCompleted(taskId) {
     const task = tasks.find((t) => t.id === taskId);
     if (task) {
@@ -61,7 +62,7 @@ function markTaskAsCompleted(taskId) {
         renderTasks();
     }
 }
-// Löschen einer Aufgabe
+// Löschen einer Aufgabe:
 function deleteTask(taskId) {
     const confirmation = confirm("Willst du diese Aufgabe wirklich löschen?");
     if (confirmation) {
@@ -82,7 +83,7 @@ function getStatusLabel(status) {
             return "";
     }
 }
-// Hinzufügen einer neuen Aufgabe
+// Hinzufügen einer neuen Aufgabe:
 taskForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const titleInput = document.getElementById("taskTitle");
@@ -102,16 +103,16 @@ taskForm.addEventListener("submit", (event) => {
     taskForm.reset();
     renderTasks();
 });
-// Speicherung der Aufgaben im localStorage
+// Speicherung der Aufgaben im localStorage:
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
-// Laden der Aufgaben aus dem localStorage
+// Laden der Aufgaben aus dem localStorage:
 function loadTasks() {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
 }
-searchInput.addEventListener("input", renderTasks);
+searchInput.addEventListener("input", renderTasks); //Aktualisieren die Aufgabenliste dynamisch 
 filterSelect.addEventListener("change", renderTasks);
 renderTasks();
 //# sourceMappingURL=Aufgabenliste.js.map
