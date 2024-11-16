@@ -157,7 +157,23 @@ taskForm.addEventListener("submit", (event) => {
 // Speicherung der Aufgaben im localStorage:
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
+
 }
+
+async function loadStartData() {
+    try {
+        const response = await fetch("https://nicolehartmann.github.io/EIA-2/03.Aufgabenliste_Formular/JSON-Datei");
+        if (response.ok) {
+            tasks = await response.json();
+            renderTasks(); // Aktualisiert die Anzeige mit den geladenen Aufgaben
+        } else {
+            console.error("Fehler beim Laden der JSON-Datei:", response.statusText);
+        }
+    } catch (error) {
+        console.error("Netzwerkfehler beim Laden der JSON-Datei:", error);
+    }
+}
+
 
 // Laden der Aufgaben aus dem localStorage:
 function loadTasks(): Task[] {
