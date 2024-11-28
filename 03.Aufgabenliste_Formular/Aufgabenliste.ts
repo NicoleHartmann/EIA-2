@@ -184,7 +184,7 @@ async function loadTasksFromServer(_url: string): Promise<void> {
     }
 }
 
-const url = "https://nicolehartmann.github.io/EIA-2/03.Aufgabenliste_Formular/JSON-Datei";
+const url = "https://nicolehartmann.github.io/EIA-2/03.Aufgabenliste_Formular/JSON-Datei.json";
 loadTasksFromServer(url);  
 
 
