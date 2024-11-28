@@ -4,7 +4,8 @@
         "title": "Mittagessen",
         "dueTime": "15:00",
         "assignee": "Michi",
-        "comment":""
+        "comment":"",
+        "status": "in-progress"
         
     },
 
@@ -13,7 +14,8 @@
         "title": "Einkaufen",
         "dueTime": "12:00",
         "assignee": "Jonas",
-        "comment": ""
+        "comment": "",
+        "status": "completed"
         
     },
     {
@@ -21,8 +23,8 @@
         "title": "Küche aufräumen",
         "dueTime": "09:30",
         "assignee": "Michi",
-        "comment": ""
-        
+        "comment": "", 
+        "status": "overdue"
     }
 ]
 
