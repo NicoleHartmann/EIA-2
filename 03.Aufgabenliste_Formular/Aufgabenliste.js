@@ -120,11 +120,30 @@ taskForm.addEventListener("submit", (event) => {
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
-// Laden der Aufgaben aus dem localStorage:
+// Aufgaben aus dem localStorage laden
 function loadTasks() {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
 }
+// asynchrone Kommunikation mit einem Server:
+async function loadTasksFromServer(_url) {
+    try {
+        const response = await fetch(_url);
+        if (response.ok) {
+            const serverTasks = await response.json();
+            tasks = serverTasks;
+            renderTasks();
+        }
+        else {
+            console.error("Beim Laden der JSON-Datei wurde ein Fehler gefunden", response.statusText);
+        }
+    }
+    catch (error) {
+        console.error("Netzwerkfehler", error);
+    }
+}
+const url = "https://nicolehartmann.github.io/EIA-2/03.Aufgabenliste_Formular/JSON-Datei.json";
+loadTasksFromServer(url);
 // Filter- und Suchleiste dynamisch aktualisieren:
 searchInput.addEventListener("input", renderTasks);
 filterSelect.addEventListener("change", renderTasks);
