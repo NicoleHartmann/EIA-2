@@ -173,8 +173,8 @@ async function loadTasksFromServer(_url: string): Promise<void> {
         const response: Response = await fetch(_url);
         if (response.ok) {
             const serverTasks: Task[] = await response.json();  
-            
             tasks = serverTasks;
+            console.log(response);
             renderTasks();  
         } else {
             console.error("Beim Laden der JSON-Datei wurde ein Fehler gefunden", response.statusText);

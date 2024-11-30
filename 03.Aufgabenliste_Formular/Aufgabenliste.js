@@ -132,6 +132,7 @@ async function loadTasksFromServer(_url) {
         if (response.ok) {
             const serverTasks = await response.json();
             tasks = serverTasks;
+            console.log(response);
             renderTasks();
         }
         else {
