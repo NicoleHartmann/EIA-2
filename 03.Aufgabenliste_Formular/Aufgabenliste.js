@@ -127,20 +127,15 @@ function loadTasks() {
 }
 // asynchrone Kommunikation mit einem Server:
 async function loadTasksFromServer(_url) {
-    try {
-        const response = await fetch(_url);
-        if (response.ok) {
-            const serverTasks = await response.json();
-            tasks = serverTasks;
-            console.log(response);
-            renderTasks();
-        }
-        else {
-            console.error("Beim Laden der JSON-Datei wurde ein Fehler gefunden", response.statusText);
-        }
+    const response = await fetch(_url);
+    if (response.ok) {
+        const serverTasks = await response.json();
+        tasks = serverTasks;
+        console.log(response);
+        renderTasks();
     }
-    catch (error) {
-        console.error("Netzwerkfehler", error);
+    else {
+        console.error("Beim Laden der JSON-Datei wurde ein Fehler gefunden", response.statusText);
     }
 }
 const url = "https://nicolehartmann.github.io/EIA-2/03.Aufgabenliste_Formular/JSON-Datei.json";
