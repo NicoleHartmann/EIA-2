@@ -2,7 +2,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     let canvas = document.querySelector("canvas");
     let context2D = canvas.getContext("2d");
-
     // Random Funktion erstellt:
     function random(min, max) {
         return Math.random() * (max - min) + min;
@@ -12,7 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let gradient = context2D.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
         gradient.addColorStop(0, "rgba(0, 255, 0, 0.8)"); //Grüner Innenverlauf
         gradient.addColorStop(1, "rgba(0, 0, 255, 0.8)"); //Blauer ausßenverlauf
-
         // Soll den Kreis mit diesem Farbverlauf zeichnen:
         context2D.beginPath();
         context2D.arc(centerX, centerY, radius, 0, 2 * Math.PI);
@@ -22,22 +20,19 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // Viereck Zeichnen:
     function drawRandomsquare() {
-
         // zufällige Positionen und Größen bestimmen
         let x = random(0, canvas.width);
         let y = random(0, canvas.height);
         let width = random(20, 400);
         let height = random(20, 300);
-
         //eine zufällige Farbe erstellen
-        let color = `rgb(${random(0, 360)}, 70%, 50%)`; // Zufällige Farbe
+        let color = `hsl(${random(0, 360)}, 70%, 50%)`; // Zufällige Farbe
         // Soll das Viereck  mit einer zufälligen farbe zeichnen:
         context2D.fillStyle = color;
         context2D.fillRect(x, y, width, height);
     }
     // Dreieck zeichnen:
     function drawRandomTriangle() {
-
         //zufällige Positionen für die Ecken des Dreiecks
         let x1 = random(0, canvas.width);
         let y1 = random(0, canvas.height);
@@ -46,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let x3 = random(0, canvas.width);
         let y3 = random(0, canvas.height);
         let color = `hsl(${random(0, 360)}, 70%, 50%)`; // Zufällige Farbe
-
         // Soll das Dreieck mit einer zufälligen Farbe zeichnen:
         context2D.fillStyle = color;
         context2D.beginPath();
@@ -58,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     // Hintergrund Zeichnen:
     function drawBackground() {
-        context2D.fillStyle = "#000000"; // Die schwarze Hintergrund farbe 
+        context2D.fillStyle = "#FFFFFF"; // Die weiße Hintergrund farbe 
         context2D.fillRect(0, 0, canvas.width, canvas.height); // Ganze Zeichenebene füllen
     }
     // Funktion  für das Ganze GenerativeKunst Bild:
@@ -83,3 +77,4 @@ document.addEventListener("DOMContentLoaded", () => {
     // Ganze GenerativeKunst Bild dargestellt werden:
     drawScene();
 });
+//# sourceMappingURL=GenerativeKunst.js.map
