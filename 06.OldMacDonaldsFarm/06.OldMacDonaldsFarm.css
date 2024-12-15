@@ -1,0 +1,38 @@
+body {
+    background-color: rgb(237, 239, 239);
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1{
+    color: rgb(26, 144, 38);
+}
+
+#animals {
+    margin-bottom: 20px;
+}
+
+.animal {
+    margin: 10px;
+    padding: 10px;
+    background-color: lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#food {
+    margin-bottom: 20px;
+}
+
+.food {
+    margin: 10px;
+    padding: 10px;
+    background-color: rgb(176, 138, 76);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button {
+    font-size: 16px;
+    cursor: pointer;
+}
